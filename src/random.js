@@ -72,6 +72,9 @@ export class PRNGRand {
         if (lo === undefined && hi === undefined) {
             throw new Error("randomInt requires two arguments")
         }
+        if(hi===undefined){
+            return Math.floor(this.random(lo+1))    
+        }
         return Math.floor(this.random(lo, hi + 1))
     }
 
