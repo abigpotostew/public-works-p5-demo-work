@@ -1,5 +1,4 @@
 import * as p5 from 'p5';
-import {createPrng, isPWPreview, setPreviewReady, setProperties} from "./publicworks";
 import {generateTraits} from "./traits";
 
 let s = (sk) => {

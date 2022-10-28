@@ -27,6 +27,7 @@ export const generateTraits = (prng) => {
         degrees = 120;
     }
     const {hue: bgHue, saturation: bgSaturation, lightness: bgLightness} = createHSLColor()
+
     const {fgHue, fgSaturation, fgLightness} = {
         fgHue: (bgHue + degrees) % 360, // fg is a complimentary color to bg
         fgSaturation: Math.min((bgSaturation + (prng.randomInt(10) - prng.randomInt(10))), 100),
