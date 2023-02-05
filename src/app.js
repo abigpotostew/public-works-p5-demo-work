@@ -1,6 +1,24 @@
 import * as p5 from 'p5';
 import {generateTraits} from "./traits";
 
+let devMode = false;
+if(devMode){
+    /**
+     * Enable new hashes on click during development.
+     */
+    const freshHash = () => {
+        window.location = '?hash=' + generateTxHash()
+    }
+    window.addEventListener('touchend', function () {
+        freshHash()
+    });
+    document.addEventListener('keyup', (e) => {
+        if (e.key === ' ') {
+            freshHash()
+        }
+    })
+}
+
 let s = (sk) => {
     const {traits, attributes} = generateTraits(createPrng());
     setProperties(attributes, traits);
